@@ -6,5 +6,7 @@ ENV LUAJIT_LIB=/usr/local/luajit/lib
 ENV LUAJIT_INC=/usr/local/luajit/include/luajit-2.0
 RUN curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
 RUN yum -y install gcc gcc-c++ make perl
+RUN /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && echo 'Asia/Shanghai' >/etc/timezone 
 RUN /usr/local/src/nginx_log.sh 
 CMD /usr/local/nginx/sbin/nginx -g 'daemon off;'
