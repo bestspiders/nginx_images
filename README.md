@@ -1,7 +1,7 @@
 # nginx_images
 eg:  
 ```
-docker build -t nginx:1.14
+docker build -f ./nginx_1.14/dockerfile -t nginx:1.14 ./nginx_1.14/
 simple example:
 docker run -itd  nginx:1.14
 complete example:
